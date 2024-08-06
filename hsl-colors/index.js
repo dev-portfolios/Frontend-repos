@@ -14,6 +14,7 @@ async function wirteDataToClipboard(data) {
 
 document.addEventListener('DOMContentLoaded', () => {
   // console.log('DOMContentLoaded')
+  getColorItems()
   const colorBtn = document.querySelector('#color-btn')
   colorBtn.addEventListener('click', getColorItems)
 })
@@ -36,14 +37,9 @@ const getColors = () => {
 
 
 const clickToCopy = (e) => {
-  // console.log('clicked')
-  // console.log('event.clipboardData', e.clipboardData)
-  // console.log(e.target)
   const copyedData = e.target.getAttribute('data-copy')
   const copyedElement = document.createElement('p')
-  // copyedElement.innerHTML = `<span>${copyedData} copyed!</span><span style="background:${copyedData}; lengt: 60px; height: 60px;"></span>`
   copyedElement.textContent = copyedData + ' copyed!'
-  // copyedElement.setAttribute('style', `background:${copyedData};`) 
   const controlSection = document.querySelector('.control')
   const preCopyed = controlSection.querySelectorAll('p')
   preCopyed.forEach(e => e.remove())
@@ -51,14 +47,11 @@ const clickToCopy = (e) => {
   controlSection.appendChild(copyedElement)
 }
 
-const getColorItems = (arr) => {
+const getColorItems = () => {
   const colorItems = getColors()
-  // console.log(colorItems)
   const htmlContent = colorItems.map(({h,s,l})=> `<div class="color-item" data-copy="hsl(${h} ${s} ${l})"><span class="item" data-copy="hsl(${h} ${s} ${l})" style="background: hsl(${h} ${s} ${l})"></span><span data-copy="hsl(${h} ${s} ${l})" class="color-title">hsl(${h} ${s} ${l})</span></div>`).join('')
-  // console.log(htmlContent)
   const colorContainer = document.querySelector('.container')
   colorContainer.innerHTML = htmlContent
-  // console.log(colorContainer.children)
   Array.from(colorContainer.children).forEach(e => e.addEventListener('click', clickToCopy))
 }
 // x is a number from 0 - 360
