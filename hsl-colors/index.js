@@ -3,7 +3,7 @@ if (navigator.clipboard) {
   // controlSection.innerHTML += `<h2>Clipboard API available<h2>`
 }
 
-async function wirteData(data) {
+async function wirteDataToClipboard(data) {
   try {
     await navigator.clipboard.writeText(data);
     // console.log('Page URL copied to clipboard');
@@ -11,6 +11,12 @@ async function wirteData(data) {
     console.error('Failed to copy: ', err);
   }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  // console.log('DOMContentLoaded')
+  const colorBtn = document.getElementById('color-btn')
+  colorBtn.addEventListener('click', getColorItems)
+})
 
 const randomInRange = (start = 0, end = 100) => Math.ceil(Math.random() * (end - start));
 
@@ -28,7 +34,6 @@ const getColors = () => {
 }
 
 
-const controlSection = document.querySelector('.control')
 const clickToCopy = (e) => {
   // console.log('clicked')
   // console.log('event.clipboardData', e.clipboardData)
@@ -38,9 +43,10 @@ const clickToCopy = (e) => {
   // copyedElement.innerHTML = `<span>${copyedData} copyed!</span><span style="background:${copyedData}; lengt: 60px; height: 60px;"></span>`
   copyedElement.textContent = copyedData + ' copyed!'
   // copyedElement.setAttribute('style', `background:${copyedData};`) 
+  const controlSection = document.querySelector('.control')
   const preCopyed = controlSection.querySelectorAll('p')
   preCopyed.forEach(e => e.remove())
-  wirteData(copyedData)
+  wirteDataToClipboard(copyedData)
   controlSection.appendChild(copyedElement)
 }
 
@@ -49,14 +55,11 @@ const getColorItems = (arr) => {
   // console.log(colorItems)
   const htmlContent = colorItems.map(({h,s,l})=> `<div class="color-item" data-copy="hsl(${h} ${s} ${l})"><span class="item" data-copy="hsl(${h} ${s} ${l})" style="background: hsl(${h} ${s} ${l})"></span><span data-copy="hsl(${h} ${s} ${l})" class="color-title">hsl(${h} ${s} ${l})</span></div>`).join('')
   // console.log(htmlContent)
+  const colorContainer = document.querySelector('.container')
   colorContainer.innerHTML = htmlContent
   // console.log(colorContainer.children)
   Array.from(colorContainer.children).forEach(e => e.addEventListener('click', clickToCopy))
 }
-
-const colorContainer = document.querySelector('.container')
-const colorBtn = document.getElementById('color-btn')
-colorBtn.addEventListener('click', getColorItems)
 // x is a number from 0 - 360
 // y is a percentage from 0% to 100%
 // z is a number from 0.0 to 1.0
