@@ -21,6 +21,42 @@ section {
 /*  border: solid 1px red;*/
 }
 
+.control {
+/*  padding: 18px;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 12px;
+}
+
+.control > button {
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.control > p {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+}
+
+input[type="range"] {
+  width: 200px;
+  margin: 0;
+}
+
+.hue-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
 .container {
   display: grid;
   gap: 24px;
@@ -44,29 +80,5 @@ section {
 .item {
   width: 120px;
   height: 120px;
-  /*max-width: 240px;
-  max-height: 240px;*/
-  border-radius: 6px;
-}
-
-.control {
-/*  padding: 18px;*/
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 12px;
-}
-
-.control > button {
-  padding: 12px 24px;
-  border-radius: 12px;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-.control > p {
-  padding: 12px;
-  font-size: 12px;
   border-radius: 6px;
 }

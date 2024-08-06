@@ -14,13 +14,14 @@ async function wirteDataToClipboard(data) {
 
 document.addEventListener('DOMContentLoaded', () => {
   // console.log('DOMContentLoaded')
-  const colorBtn = document.getElementById('color-btn')
+  const colorBtn = document.querySelector('#color-btn')
   colorBtn.addEventListener('click', getColorItems)
 })
 
-const randomInRange = (start = 0, end = 100) => Math.ceil(Math.random() * (end - start));
+const randomInRange = (start = 0, end = 100) => Math.ceil(Math.random() * (end - start + 1));
 
 const slArray = [10, 20, 30, 40, 50, 60, 70, 80, 90]
+
 const getColors = () => {
   let arr = []
   let n = 6
