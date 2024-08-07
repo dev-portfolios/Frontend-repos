@@ -1,0 +1,119 @@
+* {
+/*  padding: 12px;*/
+/*  background-color: gray;*/
+  box-sizing: border-box !important;
+}
+
+h1 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+main {
+  margin: 0 auto;
+}
+
+section {
+  margin: 0 auto;
+}
+
+.debug {
+/*  border: solid 1px red;*/
+}
+
+.control {
+/*  padding: 18px;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 12px;
+}
+
+.control > button {
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.control > p {
+  padding: 12px;
+  font-size: 12px;
+  border-radius: 6px;
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.btns > button {
+  padding: 8px 24px;
+  border-radius: 4px;
+  border: solid 2px gray;
+  background: white;
+  font-weight: bold;
+}
+
+.btns > button:hover {
+  background: red;
+  color: white;
+  border: solid 2px red;
+}
+
+.btns > .active {
+  background: red;
+  color: white;
+  border: solid 2px red;
+}
+
+.container {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 60px;
+  margin-top: 24px;
+  padding: 12px;
+}
+
+.years {
+  gap: 24px;
+  grid-template-columns: repeat(10, minmax(100px, 100px));
+  border-radius: 6px;
+}
+
+.months {
+  gap: 20px;
+  grid-template-columns: repeat(12, minmax(80px, 80px));
+  border-radius: 4px;
+}
+
+.weeks {
+  gap: 10px;
+  grid-template-columns: repeat(52, minmax(24px, 24px));
+}
+
+.years > span {
+  border-radius: 6px;
+}
+
+.months > span {
+  border-radius: 4px;
+}
+
+.weeks > span {
+  border-radius: 2px;
+}
+
+.container > span{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}
