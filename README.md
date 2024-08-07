@@ -10,3 +10,8 @@
 
 ###### simple UI projects
 - [life-in-weeks](/life-in-weeks)
+
+
+###### React
+- [React.dev](https://react.dev/learn)
+- [React codepen template](https://codepen.io/pen?template=QWYVwWN)
