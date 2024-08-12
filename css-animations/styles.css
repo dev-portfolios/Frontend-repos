@@ -1,0 +1,361 @@
+* {
+/*  padding: 12px;*/
+/*  background-color: gray;*/
+  box-sizing: border-box !important;
+}
+
+h1 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+main {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+section {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  width: 50%;
+  box-shadow: 0.1rem 0.1rem 1.5rem rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  padding: 24px;
+}
+
+.debug {
+/*  border: solid 1px red;*/
+}
+
+.control {
+/*  padding: 18px;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 12px;
+}
+
+.control > button {
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.control > p {
+  padding: 12px;
+  font-size: 12px;
+  border-radius: 6px;
+}
+
+h2 {
+  font-size: 12px;
+  text-align: center;
+}
+
+.bg-blue-light {
+  background-color: hsl(195 80 80);
+}
+
+.bg-blue {
+  background-color: hsl(195 50 50);
+}
+
+.bg-gray {
+  background-color: hsl(100, 0%, 90%);
+}
+
+.progress-bar {
+  position: relative;
+/*  width: 400px;*/
+  height: 40px;
+}
+
+.progress-value {
+  display: block;
+  position: relative;
+  height: 100%;
+/*  width: 25%;*/
+  animation: progress 3s linear 0s infinite;
+}
+
+.relative {
+  position: relative;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+.w-25 {
+  width: 25%;
+}
+
+.w-40 {
+  width: 40%;
+}
+
+.w-60 {
+  width: 60%;
+}
+
+.br-6 {
+  border-radius: 6px;
+}
+
+.pa-12 {
+  padding: 16px;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+.flex-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: white;
+}
+
+.progress-bar-2 {
+  border-top: 12px solid hsl(220, 80%, 80%);
+}
+
+.progress-bar-2-value {
+  position: absolute;
+  top: -12px;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  background-color: hsl(220, 50%, 50%);
+  border-radius: 6px 6px 0 0;
+  animation: progress 2.5s linear infinite;
+}
+
+
+@keyframes progress {
+  from { width: 0%;}
+  to { width: 100%;}
+}
+
+.beat {
+  position: relative;
+  z-index: 1;
+  animation: beat 2s linear infinite;
+  width: 60px;
+  height: 60px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.echo {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  animation: echo 2s linear infinite;
+  background-color: red;
+  border-radius: 50%;
+}
+
+@keyframes beat {
+  0% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(0.8);
+  }
+  21% {
+    transform: scale(1.5);
+  }
+  28% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(1);
+  }
+}
+
+@keyframes echo {
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  14% {
+    opacity: 0.4;
+    transform: scale(0.8);
+  }
+  21% {
+    opacity: 0.4;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+* {
+  --size-square: 16px;
+  --color: white;
+}
+
+/*.loader::before,
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+}*/
+
+.loader {
+  box-sizing: border-box;
+  position: absolute;
+  background-color: var(--color);
+  width: var(--size-square);
+  height: var(--size-square);
+}
+
+.loader.--1 {
+  top: calc(50% - var(--size-square));
+  left: calc(50% - var(--size-square));
+  animation: loader-1 3s cubic-bezier(0, 0, 0.24, 1.21) infinite;
+}
+
+@keyframes loader-1 {
+  0%, 100% {
+    transform: none;
+  }
+  
+  25% {
+    transform: translateX(100%);
+  }
+  
+  50% {
+    transform: translateX(100%) translateY(100%);
+  }
+  
+  75% {
+    transform: translateY(100%);
+  }
+}
+
+/*.loader.--2::before,
+.loader.--2::after {
+  width: var(--size-square);
+  height: var(--size-square);
+  background-color: var(--color);
+}*/
+
+.loader.--2 {
+  top: calc(50% - var(--size-square));
+  left: calc(50% - var(--size-square));
+  animation: loader-6 2.4s cubic-bezier(0, 0, 0.24, 1.21) infinite;
+}
+
+.loader.--2 {
+  top: 50%;
+  left: 50%;
+  animation: loader-2 2.4s cubic-bezier(0, 0, 0.24, 1.21) infinite;
+}
+
+@keyframes loader-2 {
+  0%, 100% {
+    transform: none;
+  }
+  
+  25% {
+    transform: translateX(-100%);
+  }
+  
+  50% {
+    transform: translateX(-100%) translateY(-100%);
+  }
+  
+  75% {
+    transform: translateY(-100%);
+  }
+}
+
+.animate {
+  animation: blink 3s ease-in-out 0.2s infinite alternate;
+}
+
+.grid-container {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 60px;
+  margin-top: 24px;
+  padding: 12px;
+  gap: 24px;
+}
+
+.col-9 {
+  grid-template-columns: repeat(9, minmax(50px, 100px));
+}
+
+.col-3 {
+  grid-template-columns: repeat(3, minmax(50px, 100px));
+}
+
+.grid-item {
+  width: 80px;
+  height: 80px;
+  background: hsl(180 50 50);
+  position: relative;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+.bar {
+  width: 50%;
+/*  height: 10px;*/
+  background-color: var(--color);
+/*  width: var(--size-square);*/
+  height: 10px;
+  animation: breath-height 1s ease-in-out infinite alternate;
+}
+
+.grid-item.--3 {
+  animation: breath-gap 1s ease-in-out infinite alternate;
+}
+
+@keyframes breath-gap {
+  from {gap: 12px}
+  to {gap: 8px}
+}
+
+@keyframes breath-height {
+  from {height: 12px}
+  to {height: 9px}
+}

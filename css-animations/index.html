@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <title>Css animations</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="index.js"></script>
+  </head>
+  <body>
+    <main>
+      <section class="control debug">
+        <h1>Css animations</h1>
+        <!-- <div class="controls btns">
+          <button data-count="3">3 Cubes</button>
+          <button data-count="9">9 Cubes</button>
+          <button data-count="12">12 Cubes</button>
+        </div> -->
+      </section>
+      <!-- <section class="container debug"></section> -->
+      
+      <section class="progress-bars">
+        <h2>Progress Bars</h2>
+        <div class="progress-bar bg-blue-light w-60 br-6">
+          <span class="progress-value bg-blue w-60 br-6"></span>
+        </div>
+
+        <div class="flex-col w-60 pa-12 bg-gray br-6 relative progress-bar-2">
+          <span class="progress-bar-2-value"></span>
+          <div class="flex-row">
+            <span class="circle bg-blue pa-12">1</span>
+            <h3>Lorem ipsum</h3>
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Adipiscing diam donec adipiscing tristique risus.</p>
+        </div>
+      </section>
+
+      <section class="heartbeat">
+        <h2>Heart beat</h2>
+        <div class="relative mb-30">
+          <div class="beat"></div>
+          <div class="echo"></div>
+        </div>
+      </section>
+
+      <section class="">
+        <div class="flex-row">
+          <h2>Loading...</h2>
+          <a href="https://codepen.io/jenning/pen/YzNmzaV" target="_blank">Simple CSS loaders</a>
+        </div>
+        <div class="grid-container col-3">
+          <div class="grid-item">
+            <span class="loader --1"></span>
+          </div>
+          <div class="grid-item">
+            <span class="loader --2"></span>
+          </div>
+          <div class="grid-item flex-col gap-10 align-center --3">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
